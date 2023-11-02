@@ -16,7 +16,19 @@
         </tr>
     </thead>
     <tbody>
+        @foreach (var monster in MonsterService.Monsters)
+        {
+            <tr>
+                <td>@monster.FirstName</td>
+                <td>@monster.LastName</td>
+                <td>@monster.Alias</td>
+                <td>@monster.Location.Name</td>
+                <td>
 
+                </td>
+            </tr>
+            
+        }
     </tbody>
 </table>
 
