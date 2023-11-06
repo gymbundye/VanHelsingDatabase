@@ -1,0 +1,39 @@
+﻿@page "/onemonster"
+@page "/onemonster/{id:int}"
+@inject IMonsterService MonsterService
+
+@if (Id == null)
+{
+    <PageTitle> Add a Monster to the Database </PageTitle>
+    <h3>Add a new Monster</h3>
+
+}
+else
+{
+    <PageTitle> Edit @onemonster.Alias</PageTitle>
+    <h3>Edit @onemonster.Alias</h3>
+}
+
+<h3>Monster</h3>
+
+@code {
+    [Parameter]
+    public int? Id { get; set; }
+
+    Monster onemonster = new Monster { Location = new Location() };
+
+    protected override async Task OnParametersSetAsync()
+    {
+            if (Id == null)
+            {
+                // Add a ne Monster to the DataBase
+
+            }  
+            else
+            {
+                onemonster = await MonsterService.GetOneMonster((int)Id);
+            }
+
+        
+    }
+}

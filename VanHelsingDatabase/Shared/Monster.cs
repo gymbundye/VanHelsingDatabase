@@ -18,6 +18,6 @@ namespace VanHelsingDatabase.Shared
 
         public Location? Location { get; set; }
 
-        public int LocationID { get; set; }
+        public int LocationId { get; set; }
     }
 }

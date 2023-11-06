@@ -8,8 +8,8 @@ namespace VanHelsingDatabase.Shared
 {
     public class Location
     {
-        public int LocationId { get; set; }
+        public int Id { get; set; }
 
-        public string Name { get; set; }    = string.Empty;
+        public string Name { get; set; } = string.Empty;
     }
 }

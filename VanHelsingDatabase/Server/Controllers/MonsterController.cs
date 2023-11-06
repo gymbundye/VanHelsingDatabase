@@ -10,8 +10,8 @@ namespace VanHelsingDatabase.Server.Controllers
     {
         public static List<Location> locations = new List<Location>
         {
-            new Location { LocationId = 1, Name = "Translyvania"},
-            new Location { LocationId = 2, Name = "Egypt" }
+            new Location { Id = 1, Name = "Translyvania"},
+            new Location { Id = 2, Name = "Egypt" }
         };
 
         public static List<Monster> monsters = new List<Monster>
@@ -28,7 +28,7 @@ namespace VanHelsingDatabase.Server.Controllers
             {
                 Id = 2,
                 FirstName = "Imhotep",
-                LastName ="",
+                LastName ="Smith",
                 Alias = "The Mummy",
                 Location = locations[1]
             }
@@ -45,12 +45,12 @@ namespace VanHelsingDatabase.Server.Controllers
 
         public async Task<ActionResult<Monster>> GetOneMonster(int id)
         {
-            var monster = monsters.FirstOrDefault(m => m.Id == id);
-            if (monster == null) 
+            var onemonster = monsters.FirstOrDefault(m => m.Id == id);
+            if (onemonster == null) 
             {
                 return NotFound("We haven't fought that Monster yet");
             }
-            return Ok(monster);
+            return Ok(onemonster);
         }
 
     }
